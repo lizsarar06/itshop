@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/', function () {
@@ -25,5 +26,13 @@ Route::get('/myshop', [WebController::class,"myshop"])->name("web.myshop");
 
 Route::resource('product_types', ProductTypeController::class);
 Route::resource('product', ProductController::class);
+
+Route::get('/error', function () {
+    return view('error_page');
+    })->name('error');
+
+Route::get('/admin-dashboard', [AdminController::class, 'index'])->middleware('is_admin');
+
+
 
 require __DIR__.'/auth.php';

@@ -66,4 +66,12 @@ class ProductController extends Controller
             return back();
         
     }
+
+//     public function __construct()
+//     {
+//         $this->middleware('auth:sanctum', ['only' => ['create', 'store', 'edit',
+//         'delete']]);
+// // or
+//         $this->middleware('auth:sanctum', ['except' => ['index', 'show']]);
+//     }
 }
